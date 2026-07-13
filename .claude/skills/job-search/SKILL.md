@@ -118,13 +118,20 @@ date). Inside:
 - `SUMMARY.md` — a table with one row per job: Company | Role | Location |
   Posted | Match highlights | **Application link** | Path to tailored resume
 
-If `pandoc` is available (`command -v pandoc`), also render each resume to PDF
-next to its markdown (`resume.pdf`). If not, skip PDFs silently — do not
-install anything.
+Render each resume to PDF next to its markdown — the PDF is the deliverable
+the user applies with; the markdown is its source. Use the repo's converter:
+
+    pip install markdown   # once per session
+    python3 scripts/resume_pdf.py <dir>/resume.md <dir>/resume.pdf
+
+It prints via headless Chromium (`CHROME_BIN`, `/opt/pw-browsers/chromium`,
+or on PATH). Each resume should fit on one page — check with `pdfinfo` and
+trim the least JD-relevant bullets if it overflows. If neither Chromium nor
+pandoc is available, deliver the markdown and tell the user why.
 
 ## Step 5 — Deliver
 
-- Send `SUMMARY.md` and the tailored resume files to the user with
+- Send `SUMMARY.md` and the tailored resume PDFs to the user with
   `SendUserFile` if available; otherwise print the summary and resumes
   directly in chat.
 - In chat, list every kept job inline: company, role, location, fit note,

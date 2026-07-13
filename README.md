@@ -30,10 +30,11 @@ Optionally override preferences for a single run:
 ### Output
 
 Run output is delivered directly in chat (summary inline, tailored resumes as
-attached files) and is never committed to the repository. Each run produces,
-per job: a tailored `resume.md`, a `notes.md` (why it matched, what changed,
-gaps to prep for), and a `SUMMARY.md` linking every application page to its
-resume. The only run artifact stored in the repo is `profile/seen-jobs.md`, a
+attached PDFs) and is never committed to the repository. Each run produces,
+per job: a one-page tailored `resume.pdf` (rendered from markdown via
+`scripts/resume_pdf.py`, which uses headless Chromium), a `notes.md` (why it
+matched, what changed, gaps to prep for), and a `SUMMARY.md` linking every
+application page to its resume. The only run artifact stored in the repo is `profile/seen-jobs.md`, a
 links-only log used to avoid delivering the same posting twice.
 
 ### Guarantees
