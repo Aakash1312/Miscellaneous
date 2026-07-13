@@ -104,7 +104,12 @@ Hard rules — the resume must stay truthful:
 
 ## Step 4 — Write the output
 
-Create a run directory: `applications/<YYYY-MM-DD>/` (today's date). Inside:
+IMPORTANT: run output is delivered to the user, NEVER committed or pushed to
+the repository. Write it to the session scratchpad directory (or a local
+`applications/` directory, which is gitignored) and keep it out of git.
+
+Create a run directory: `<scratchpad>/applications/<YYYY-MM-DD>/` (today's
+date). Inside:
 
 - `<company>-<role-slug>/resume.md` — the tailored resume
 - `<company>-<role-slug>/notes.md` — 3–5 bullets: why this job matched, what
@@ -119,10 +124,17 @@ install anything.
 
 ## Step 5 — Deliver
 
-- Send `SUMMARY.md` (and the tailored resume files) to the user with
-  `SendUserFile` if available.
-- End with a short recap in chat: how many jobs were found vs. kept, and the
-  top pick with its application link.
+- Send `SUMMARY.md` and the tailored resume files to the user with
+  `SendUserFile` if available; otherwise print the summary and resumes
+  directly in chat.
+- In chat, list every kept job inline: company, role, location, fit note,
+  and the application link — the user should not need to open a file to see
+  the results.
+- Append each kept job's application link to `profile/seen-jobs.md` (create
+  it if missing; links only, one per line with the date) — this is the only
+  run artifact that goes in the repo, kept solely so future runs can dedupe.
+- End with a short recap: how many jobs were found vs. kept, and the top
+  pick with its application link.
 - Do NOT submit any application, create accounts, or fill any forms — the
   user applies themselves via the links.
 
@@ -130,6 +142,6 @@ install anything.
 
 If the user asks for this to run automatically (e.g. "every morning"), set up
 a schedule with the available scheduling tool (CronCreate or a Routine via
-create_trigger) whose prompt is simply `/job-search`, and dedupe against links
-already present in previous `applications/*/SUMMARY.md` files so the same
-posting is never delivered twice.
+create_trigger) whose prompt is simply `/job-search`, and dedupe against the
+links recorded in `profile/seen-jobs.md` so the same posting is never
+delivered twice.

@@ -29,17 +29,12 @@ Optionally override preferences for a single run:
 
 ### Output
 
-Each run writes to `applications/<date>/`:
-
-```
-applications/2026-07-13/
-├── SUMMARY.md                     # table: company, role, application link, resume path
-├── acme-senior-backend/
-│   ├── resume.md                  # resume tailored to Acme's job description
-│   ├── resume.pdf                 # rendered if pandoc is installed
-│   └── notes.md                   # why it matched, what was changed, gaps to prep for
-└── …
-```
+Run output is delivered directly in chat (summary inline, tailored resumes as
+attached files) and is never committed to the repository. Each run produces,
+per job: a tailored `resume.md`, a `notes.md` (why it matched, what changed,
+gaps to prep for), and a `SUMMARY.md` linking every application page to its
+resume. The only run artifact stored in the repo is `profile/seen-jobs.md`, a
+links-only log used to avoid delivering the same posting twice.
 
 ### Guarantees
 
