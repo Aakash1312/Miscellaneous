@@ -41,7 +41,8 @@ strong { font-weight: 600; }
 """
 
 TEMPLATE = """<!DOCTYPE html>
-<html><head><meta charset="utf-8"><style>{css}</style></head>
+<html><head><meta charset="utf-8"><title>{title}</title>
+<style>{css}</style></head>
 <body>{body}</body></html>"""
 
 
@@ -62,8 +63,13 @@ def main() -> None:
     out = sys.argv[2] if len(sys.argv) > 2 else os.path.splitext(src)[0] + ".pdf"
 
     with open(src, encoding="utf-8") as f:
-        body = markdown.markdown(f.read(), extensions=["smarty", "nl2br"])
-    html = TEMPLATE.format(css=CSS, body=body)
+        text = f.read()
+    body = markdown.markdown(text, extensions=["smarty", "nl2br"])
+    # PDF viewers show the HTML <title> as the document title; derive it from
+    # the resume's name heading instead of the temp file's random name.
+    name = next((ln.lstrip("# ").strip() for ln in text.splitlines()
+                 if ln.startswith("# ")), "Resume")
+    html = TEMPLATE.format(title=f"{name.title()} - Resume", css=CSS, body=body)
 
     with tempfile.NamedTemporaryFile("w", suffix=".html", delete=False,
                                      encoding="utf-8") as tmp:
