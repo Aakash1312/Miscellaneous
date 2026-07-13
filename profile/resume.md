@@ -31,9 +31,9 @@ Client-facing AI delivery for enterprise customers (Boston Dynamics, IFFCO-Tokio
 
 ## Skills
 
-- Agentic AI: LLM applications, agentic workflows, RAG systems, prompt engineering, LangChain, LangGraph, MCP, Qdrant (vector DB), OpenAI & Anthropic Claude APIs
+- Agentic AI: LLM applications, agentic workflows, RAG systems, prompt engineering, LangChain, MCP, Qdrant (vector DB), OpenAI & Anthropic Claude APIs
 - Client Delivery: workflow discovery with business stakeholders, executive-facing communication, end-to-end engagement ownership, reusable documentation and QA frameworks
-- Engineering: Python (production Django systems, FastAPI, Flask), SQL, TypeScript, C#, Docker, CI/CD pipelines
+- Engineering: Python (production Django systems, FastAPI), SQL, TypeScript, C#, Docker, CI/CD pipelines
 - Systems & Cloud: Salesforce CRM (Bulk API, Apex Triggers), REST/API integrations, AWS (Redshift, EC2, S3, Lambda), PostgreSQL, ETL/ELT design
 
 ## Education

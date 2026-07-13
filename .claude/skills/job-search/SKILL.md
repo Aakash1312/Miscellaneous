@@ -79,14 +79,23 @@ Hard rules — the resume must stay truthful:
   relevant bullet, promoting a corpus fact into a bullet, trimming or dropping
   irrelevant ones, rewriting the summary line for the target role, and
   reordering the skills list so JD-matching skills come first.
-- Gap rule: when a JD wants a skill/technology/bullet that would strengthen
-  the resume but appears NOWHERE in the master resume or experience corpus,
-  do NOT add it. Instead record it in that job's `notes.md` under "Gaps", and
-  in the final chat message ask the user directly: "Have you ever worked with
-  <X>? If yes, tell me the context and I'll add it." Deduplicate these
-  questions across jobs. When the user confirms experience with something,
-  add it to `profile/experience/` (and `profile/resume.md` if appropriate) so
-  future runs can use it without asking again.
+- Gap rule: when a JD wants a skill/technology that would strengthen the
+  resume but appears NOWHERE in the master resume or experience corpus, do
+  NOT add it. Instead record it in that job's `notes.md` under "Gaps", and in
+  the final chat message ask the user, grouped per job ("For <Company> —
+  <Role>: ..."): (a) "Have you ever worked with <X>?" and (b) "If yes, give
+  me one bullet point of relevant experience backing it (what you did, where,
+  with what outcome)." A skill may be added to the skills list only after the
+  user confirms it, and a resume bullet may be written for it only from the
+  user's own backing bullet — never drafted from nothing. Ask about every gap
+  that would materially improve that job's resume, deduplicating repeated
+  skills across jobs. Check `profile/experience/confirmed-skills.md` first:
+  never re-ask about a skill already confirmed there, and never ask about (or
+  add) one listed as explicitly not confirmed / removed.
+- When the user confirms a skill and provides its backing bullet, record both
+  in `profile/experience/confirmed-skills.md` (and promote to
+  `profile/resume.md` if broadly applicable) so future runs use them without
+  asking again.
 - Keep it ATS-friendly: plain headings, no tables/columns/graphics, standard
   section names (Summary, Experience, Skills, Education), and include the
   JD's exact keyword spellings where truthful (e.g. "PostgreSQL" if the JD

@@ -24,11 +24,13 @@
 ## Nice-to-have keywords
 - LangChain, vector databases, Salesforce integration, Redshift/Postgres, Docker, healthcare
 
+## Work authorization
+- US permanent resident (green card) — no sponsorship required. Worth
+  mentioning in notes when a posting asks about authorization.
+
 ## Deal-breakers (auto-reject)
 - Staffing agencies / third-party recruiters
-- Postings that explicitly state "no visa sponsorship" or "US citizens only"
-  (currently on F-1 STEM OPT — flag sponsorship policy in notes when the
-  posting mentions it)
+- Roles requiring US citizenship or an active security clearance
 - Pure frontend roles
 
 ## Salary floor (optional)

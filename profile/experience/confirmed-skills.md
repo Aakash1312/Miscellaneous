@@ -16,8 +16,8 @@ metrics beyond them.
   hands-on; no specific project detail given.
 - **Anthropic Claude API / multiple LLM providers** — confirmed; resume
   previously named only the OpenAI API.
-- **LangGraph / MCP / agent frameworks beyond LangChain** — confirmed.
-- **FastAPI / Flask** — confirmed Python API frameworks besides Django.
+- **MCP / agent frameworks beyond LangChain** — confirmed.
+- **FastAPI** — confirmed Python API framework besides Django.
 - **TypeScript & C#** — confirmed used AT GAIN (plausibly the RM Portal POC /
   service-console work, but the user did not specify). Keep them in the
   skills list; ask the user for project context before writing a dedicated
@@ -30,6 +30,8 @@ The user was asked and did not claim these; never put them on a resume:
 - Airflow / dbt / Prefect
 - Kafka or other event streaming
 - Kubernetes
+- LangGraph (user asked to remove it on 2026-07-13)
+- Flask (user asked to remove it on 2026-07-13)
 
 ## Open questions for the user
 
