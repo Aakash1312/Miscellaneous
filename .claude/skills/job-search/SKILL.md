@@ -17,6 +17,10 @@ Read these files from the repository root:
 - `profile/resume.md` — the user's master resume (source of truth for all facts)
 - `profile/preferences.md` — target roles, locations, seniority, salary floor,
   keywords, deal-breakers, and recency window
+- `profile/experience/*.md` — extended experience corpus (e.g. `gain.md`), a
+  richer record of real work than fits on the resume. Facts from here may be
+  promoted into a tailored resume when a job description calls for them, but
+  internal ticket IDs must never appear on a resume.
 
 If either file is missing or still contains `<!-- TODO -->` placeholders, STOP
 and ask the user to fill them in before searching. Do not invent a profile.
@@ -68,13 +72,21 @@ Starting from `profile/resume.md`, produce a tailored resume for each job.
 Hard rules — the resume must stay truthful:
 
 - NEVER invent employers, titles, dates, degrees, certifications, metrics, or
-  skills that are not in the master resume. Tailoring means re-emphasis, not
-  fabrication.
+  skills that are not in the master resume or the `profile/experience/`
+  corpus. Tailoring means re-emphasis, not fabrication.
 - Allowed: reordering bullets and sections, rewording bullets to mirror the
   JD's terminology (only where the underlying fact supports it), expanding a
-  relevant bullet, trimming or dropping irrelevant ones, rewriting the summary
-  line for the target role, and reordering the skills list so JD-matching
-  skills come first.
+  relevant bullet, promoting a corpus fact into a bullet, trimming or dropping
+  irrelevant ones, rewriting the summary line for the target role, and
+  reordering the skills list so JD-matching skills come first.
+- Gap rule: when a JD wants a skill/technology/bullet that would strengthen
+  the resume but appears NOWHERE in the master resume or experience corpus,
+  do NOT add it. Instead record it in that job's `notes.md` under "Gaps", and
+  in the final chat message ask the user directly: "Have you ever worked with
+  <X>? If yes, tell me the context and I'll add it." Deduplicate these
+  questions across jobs. When the user confirms experience with something,
+  add it to `profile/experience/` (and `profile/resume.md` if appropriate) so
+  future runs can use it without asking again.
 - Keep it ATS-friendly: plain headings, no tables/columns/graphics, standard
   section names (Summary, Experience, Skills, Education), and include the
   JD's exact keyword spellings where truthful (e.g. "PostgreSQL" if the JD

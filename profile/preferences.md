@@ -1,31 +1,38 @@
-<!-- TODO: Fill in your job-search preferences. The /job-search skill reads
-this file to decide what to search for and which matches to keep. -->
-
 # Job Search Preferences
 
 ## Target roles
-- e.g. Senior Software Engineer, Staff Backend Engineer
+- AI Engineer / LLM Engineer / AI Agent Engineer
+- Software Engineer (AI/ML, backend, or data platform)
+- Data Integration / Data Platform Engineer
+- Forward-deployed / solutions engineer roles with an AI focus
 
 ## Seniority
-- e.g. Senior / Staff
+- Senior (5+ years of experience); open to strong mid-level roles at top companies
 
 ## Locations
-- e.g. Remote (worldwide), Bengaluru, or "Remote (US timezones)"
+- New York City, NY
+- California (Bay Area, Los Angeles, San Diego — anywhere in-state)
+- Atlanta, GA
+- Remote (US) also acceptable
 
 ## Recency window
 - Only jobs posted in the last: 7 days
 
 ## Must-have keywords
-- e.g. Python, distributed systems
+- Python, and at least one of: LLM / RAG / agents / GenAI, data integration / ETL, Django
 
 ## Nice-to-have keywords
-- e.g. Kubernetes, ML infrastructure
+- LangChain, vector databases, Salesforce integration, Redshift/Postgres, Docker, healthcare
 
 ## Deal-breakers (auto-reject)
-- e.g. on-site only, contract roles, staffing agencies
+- Staffing agencies / third-party recruiters
+- Postings that explicitly state "no visa sponsorship" or "US citizens only"
+  (currently on F-1 STEM OPT — flag sponsorship policy in notes when the
+  posting mentions it)
+- Pure frontend roles
 
 ## Salary floor (optional)
-- e.g. $150k / ₹50 LPA — skip postings that state a range below this
+- Not set — include salary range in the summary when the posting states one
 
 ## Preferred job boards (optional)
 - Default: LinkedIn, Indeed, Greenhouse, Lever, Ashby, company career pages
